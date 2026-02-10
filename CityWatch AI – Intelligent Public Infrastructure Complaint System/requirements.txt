@@ -5,3 +5,5 @@ plotly
 azure-storage-blob
 python-dotenv
 Pillow
+scikit-learn
+matplotlib  
