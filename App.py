@@ -8,6 +8,7 @@ from io import StringIO
 import os
 import random
 import string
+from dotenv import load_dotenv
 from azure.storage.blob import BlobServiceClient, ContentSettings, generate_blob_sas, BlobSasPermissions
 
 # ==========================================
@@ -38,11 +39,18 @@ st.markdown("""
 # ==========================================
 # ☁️ 2. BACKEND: AZURE STORAGE (WITH SAS TOKENS)
 # ==========================================
+# 1. Load the environment variables
+load_dotenv()
+
 CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
 DATA_CONTAINER = "complaint-data"
 IMAGE_CONTAINER = "complaint-images"
 BLOB_NAME = "complaints_master.csv"
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
+
+# Check if they loaded correctly (Optional debugging, remove later)
+if not ADMIN_PASSWORD or not CONNECTION_STRING:
+    st.error("🚨 Secrets not found! Please check your .env file.")
 
 class AzureBackend:
     def __init__(self):
