@@ -82,3 +82,74 @@ AI Logic: Rule-based NLP, clustering & burst detection
 Security: Environment variables & Streamlit Cloud Secrets
 
 📂 Project Structure
+CityWatch-AI/
+│
+├── App.py                  # Main Streamlit application
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+├── .gitignore              # Ignored files & secrets
+│
+├── data/
+│   └── complaints_master_sample.csv
+│
+└── notebooks/
+    └── Index.ipynb         # Analysis & experimentation
+▶️ How to Run Locally
+
+Clone the repository:
+
+git clone https://github.com/your-username/CityWatch-AI.git
+cd CityWatch-AI
+
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Create a .env file (local only):
+
+AZURE_STORAGE_CONNECTION_STRING=your_connection_string_here
+ADMIN_PASSWORD=your_admin_password_here
+
+
+Run the app:
+
+streamlit run App.py
+
+🌐 Deployment
+
+The application is designed to be deployed on Streamlit Cloud.
+
+Deployment requirements:
+
+requirements.txt in repository root
+
+Azure credentials added via Streamlit Secrets
+
+Main file path correctly set (App.py)
+
+🎓 Internship Context
+
+This project was developed as an advanced AI + Cloud internship project (Microsoft Elevate / AICTE-aligned) with emphasis on:
+
+Real-world system architecture
+
+Secure cloud integration
+
+Explainable AI usage
+
+Role-based access control
+
+Scalable and maintainable design
+
+⚠️ Disclaimer
+
+This system is a prototype and proof-of-concept created for educational and internship purposes.
+It does not connect to real government systems and does not perform actual complaint resolution.
+
+👤 Author
+
+Amit Kushwaha
+B.Tech (AI & ML)
+Internship Project – CityWatch AI
